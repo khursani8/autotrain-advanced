@@ -236,6 +236,14 @@ class RunAutoTrainLLMCommand(BaseAutoTrainCommand):
                 "alias": ["--save-strategy"],
             },
             {
+                "arg": "--save_steps",
+                "help": "Save steps to use",
+                "required": False,
+                "type": str,
+                "default": "100",
+                "alias": ["--save-steps"],
+            },
+            {
                 "arg": "--auto_find_batch_size",
                 "help": "Auto find batch size True/False",
                 "required": False,
@@ -453,6 +461,7 @@ class RunAutoTrainLLMCommand(BaseAutoTrainCommand):
                 evaluation_strategy=self.args.evaluation_strategy,
                 save_total_limit=self.args.save_total_limit,
                 save_strategy=self.args.save_strategy,
+                save_steps=self.args.save_steps,
                 auto_find_batch_size=self.args.auto_find_batch_size,
                 fp16=self.args.fp16,
                 push_to_hub=self.args.push_to_hub,

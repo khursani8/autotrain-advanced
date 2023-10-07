@@ -33,6 +33,7 @@ class LLMTrainingParams(BaseModel):
     evaluation_strategy: str = Field("epoch", title="Evaluation strategy")
     save_total_limit: int = Field(1, title="Save total limit")
     save_strategy: str = Field("epoch", title="Save strategy")
+    save_steps: str = Field(100, title="Save stepssave_steps")
     auto_find_batch_size: bool = Field(False, title="Auto find batch size")
     fp16: bool = Field(False, title="FP16")
     push_to_hub: bool = Field(False, title="Push to hub")

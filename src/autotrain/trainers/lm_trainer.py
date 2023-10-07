@@ -398,6 +398,7 @@ def train(co2_tracker, payload, huggingface_token, model_path):
         logging_steps=logging_steps,
         save_total_limit=1,
         save_strategy="epoch",
+        save_steps=100,
         disable_tqdm=not bool(os.environ.get("ENABLE_TQDM", 0)),
         gradient_accumulation_steps=job_config.gradient_accumulation_steps,
         report_to="none",
